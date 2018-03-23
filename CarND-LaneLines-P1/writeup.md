@@ -38,9 +38,18 @@ There are two confusing points:
 * get the final top/bottom points with two interception lines
 * draw the positive and negative lane lines
 
+Updated version of extending lane lines, mainly fixing the severe crossing lane line problem:
+
+* approximate the slope of the lane line
+* approximate the center point of lane line
+* approximate the bias of the lane line
+* determine the top/bottom points of lane line through two interception lines
+
+
 ### 2. Identify potential shortcomings with your current pipeline
 
-My strategy for extending the lane lines is not stable in the video, since it's easy impacted by result of Hough Transformation.
+My strategy for extending the lane lines is not stable in the video, since it's easily impacted by result of Hough Transformation.
+Flickery still exists in video few times, more tunning work to be done.
 
 
 ### 3. Suggest possible improvements to your pipeline
