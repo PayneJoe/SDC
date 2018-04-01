@@ -32,9 +32,8 @@ signs data set:
 * The shape of a traffic sign image is (32, 32, 3)
 * The number of unique classes/labels in the data set is 43
 
-#### 2. Include an exploratory visualization of the dataset.
-
 I just calculated the propotions of individual labels, and did not visualize them yet. The propotions are show below:
+
 ```
 [ 0.00517256  0.05689819  0.05776028  0.03620794  0.05086353  0.04741516
   0.01034512  0.03707003  0.03620794  0.03793212  0.05172562  0.03362166
@@ -48,6 +47,12 @@ I just calculated the propotions of individual labels, and did not visualize the
 
 It seems like they differs much in some way.
 
+#### 2. Visualization for few images from train
+![image](./x_0.jpg)
+![image](./x_1.jpg)
+![image](./x_2.jpg)
+![image](./x_3.jpg)
+![image](./x_4.jpg)
 
 ### Preprocessing for images
 
@@ -186,32 +191,67 @@ misclassified label 0
 
 After finding the notable characteristics on these misclassified images we can find a way out.
 
-#### Softmax for top-5
+#### Top-5 softmax probabilities for the images from web
+
+1. Here are five German traffic signs that I found on the web:
+
+Label 3:
+
+![image](./speed_limit_60.jpg)
+
+Label 34:
+
+![image](./turn_left.jpg)
+
+Label 4:
+
+![image](./speed_limit_70.jpg)
+
+Label 14:
+
+![image](./stop.jpg)
+
+Label 6:
+
+![image](./end_of_speed.jpg)
+
+The first image might be easy to classify since its pretty clear color and prints.
+The second/third/fourth ones might not easy to classify because of its background color.
+The last one might be easy to classify with its clear color and prints.
+
+2. Predictions for the 5 images from web
+
+Here are the results of the prediction:
+
+| Image                 |              Prediction                       |
+|:---------------------:|:---------------------------------------------:| 
+| Speed limit (60km/h)  | Speed limit (60km/h)                          |
+| Turn left ahead       | Priority road                                 |
+| Speed limit (70km/h)  | Priority road                                 |
+| Stop Sign             | Roundabout mandatory                          |
+| End of speed limit    | Speed limit (70km/h)                          |
+
+The model was able to correctly guess 1 of the 5 traffic signs, which gives an accuracy of 20%.
+
+3. The certainty and uncertainty of the 5 images from web:
+
+The top-5 softmax probabilities for the 5 images from web are shown as bellow:
 
 ```
-[[  1.00000000e+00   4.20450115e-18   2.10352379e-23   6.52576625e-24
-    3.33030952e-35]
- [  1.00000000e+00   6.96813287e-26   3.24348597e-27   1.66593769e-36
-    0.00000000e+00]
- [  1.00000000e+00   1.66239502e-29   7.94006350e-32   3.57492187e-33
-    2.98093303e-36]
- [  1.00000000e+00   3.29955854e-11   4.59174867e-16   4.86257244e-19
-    6.82118498e-21]
- [  9.99999881e-01   1.52752676e-07   4.86059619e-08   3.54500891e-08
-    2.95087677e-10]
- [  1.00000000e+00   2.37808822e-26   3.89180483e-27   1.43134902e-27
-    3.52560555e-29]
- [  1.00000000e+00   1.86505256e-11   9.14038680e-17   1.32978036e-25
-    6.42710864e-27]
- [  1.00000000e+00   2.35127408e-23   9.46849392e-24   4.89613857e-24
-    1.83010464e-24]
- [  9.99999642e-01   3.18007295e-07   3.63931174e-09   3.10201020e-09
-    6.23280316e-11]
- [  9.99934435e-01   6.55842960e-05   1.82283024e-08   3.64373957e-14
-    2.25633856e-14]]
+[[  1.00000000e+00   4.20123937e-14   1.80336256e-30   5.73647403e-31
+    1.24027232e-32]
+ [  9.86724675e-01   1.32748801e-02   4.80344283e-07   7.46479856e-09
+    9.60522661e-10]
+ [  1.00000000e+00   1.39813395e-11   6.65089620e-13   8.96230993e-14
+    1.19569786e-15]
+ [  1.00000000e+00   3.56355095e-19   5.65593226e-21   2.88613332e-22
+    9.58413051e-23]
+ [  9.53343868e-01   3.63940038e-02   1.02621121e-02   9.39450809e-11
+    7.96665685e-12]]
 ```
 
-I put it above though it seems not very helpful for me.
+We can conclude that the first, third, and the fourth images have greater certainty then the second and last ones.
+
 
 ### Visualizing the Neural Network 
 
