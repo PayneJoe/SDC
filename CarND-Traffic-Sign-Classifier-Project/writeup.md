@@ -21,7 +21,7 @@ Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/4
 
 ### Data Set Summary & Exploration
 
-#### 1.  basic summary of the data set
+#### 1.  Basic summary of the data set
 
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
@@ -47,12 +47,20 @@ I just calculated the propotions of individual labels, and did not visualize the
 
 It seems like they differs much in some way.
 
-#### 2. Visualization for few images from train
+#### 2. Visualization
+
+A few images from train data set:
+
 ![image](./x_0.jpg)
 ![image](./x_1.jpg)
 ![image](./x_2.jpg)
 ![image](./x_3.jpg)
 ![image](./x_4.jpg)
+
+Propotions of the labels:
+
+![image](./label_propotion.jpg)
+
 
 ### Preprocessing for images
 
