@@ -59,7 +59,7 @@ A few images from train data set:
 
 Propotions of the labels:
 
-![image](./label_propotion.jpg)
+![image](./label_propotions.jpg)
 
 
 ### Preprocessing for images
