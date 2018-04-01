@@ -201,7 +201,7 @@ After finding the notable characteristics on these misclassified images we can f
 
 #### Top-5 softmax probabilities for the images from web
 
-1. Here are five German traffic signs that I found on the web:
+1. Here are five German traffic signs that I downloaded after googling on the web:
 
 Label 3:
 
@@ -234,12 +234,12 @@ Here are the results of the prediction:
 | Image                 |              Prediction                       |
 |:---------------------:|:---------------------------------------------:| 
 | Speed limit (60km/h)  | Speed limit (60km/h)                          |
-| Turn left ahead       | Priority road                                 |
-| Speed limit (70km/h)  | Priority road                                 |
-| Stop Sign             | Roundabout mandatory                          |
-| End of speed limit    | Speed limit (70km/h)                          |
+| Turn left ahead       | Stop                                          |
+| Speed limit (70km/h)  | Bumpy road                                    |
+| Stop Sign             | Speed limit (80km/h)                          |
+| End of speed limit    | Slippery road                                 |
 
-The model was able to correctly guess 1 of the 5 traffic signs, which gives an accuracy of 20%.
+The model was able to correctly guess 1 of the 5 traffic signs, which gives an accuracy of 20%. It seems to be much different with that of test data set. I assume that features of these five images from web is much different from that of test data set.
 
 3. The certainty and uncertainty of the 5 images from web:
 
@@ -258,7 +258,15 @@ The top-5 softmax probabilities for the 5 images from web are shown as bellow:
     6.29977733e-02]]
 ```
 
-We can conclude that the first, third, and the fourth images have greater certainty then the second and last ones.
+The top-5 labels for the 5 images from web are shown as bellow:
+```
+[[ 3  5  2  7  1]
+ [14 17 12 25 13]
+ [22 23 19 25 26]
+ [ 5  2  3 40 37]
+ [23 28 31 29 25]]
+```
+We can conclude that the first two images have great confident on targeting label, while the last three ones might have much uncertainty about that.
 
 
 ### Visualizing the Neural Network 
