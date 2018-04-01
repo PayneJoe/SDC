@@ -173,12 +173,12 @@ An iterative approach was chosen:
 
 * Top-10 lowest recall labels
 ```
-[30 27 24 21 41 23  7 18  6 26]
+[27 21 30 24  6  7 18 40 28 37]
 ```
 * Recalls of labels with top-10 lowest recall
 ```
-[ 0.76666665  0.82666665  0.85000002  0.88412696  0.89333332  0.89696968
-  0.94666666  0.95200002  0.97083336  0.98124999]
+[ 0.77333331  0.77333331  0.89111114  0.90793651  0.91666669  0.9311111
+  0.94242424  0.94583333  0.972       0.97500002]
 ```
 * Visualization for misclassified images of label 30
 
@@ -205,23 +205,23 @@ After finding the notable characteristics on these misclassified images we can f
 
 Label 3:
 
-![image](./speed_limit_60.jpg)
+![image](./speed_limit_60_resized.jpg)
 
 Label 34:
 
-![image](./turn_left.jpg)
+![image](./turn_left_resized.jpg)
 
 Label 4:
 
-![image](./speed_limit_70.jpg)
+![image](./speed_limit_70_resized.jpg)
 
 Label 14:
 
-![image](./stop.jpg)
+![image](./stop_resized.jpg)
 
 Label 6:
 
-![image](./end_of_speed.jpg)
+![image](./end_of_speed_resized.jpg)
 
 The first image might be easy to classify since its pretty clear color and prints.
 The second/third/fourth ones might not easy to classify because of its background color.
@@ -246,16 +246,16 @@ The model was able to correctly guess 1 of the 5 traffic signs, which gives an a
 The top-5 softmax probabilities for the 5 images from web are shown as bellow:
 
 ```
-[[  1.00000000e+00   4.20123937e-14   1.80336256e-30   5.73647403e-31
-    1.24027232e-32]
- [  9.86724675e-01   1.32748801e-02   4.80344283e-07   7.46479856e-09
-    9.60522661e-10]
- [  1.00000000e+00   1.39813395e-11   6.65089620e-13   8.96230993e-14
-    1.19569786e-15]
- [  1.00000000e+00   3.56355095e-19   5.65593226e-21   2.88613332e-22
-    9.58413051e-23]
- [  9.53343868e-01   3.63940038e-02   1.02621121e-02   9.39450809e-11
-    7.96665685e-12]]
+[[  8.99228036e-01   9.60400254e-02   2.63314345e-03   7.32426124e-04
+    4.93377680e-04]
+ [  9.77702558e-01   2.11799908e-02   1.06660731e-03   2.01061521e-05
+    7.37569781e-06]
+ [  3.79819572e-01   1.60794437e-01   1.25916675e-01   1.17661886e-01
+    4.63281013e-02]
+ [  4.61661071e-01   2.71957219e-01   8.35748166e-02   6.78475797e-02
+    6.69432059e-02]
+ [  1.61182880e-01   1.05243079e-01   8.85063410e-02   7.30672851e-02
+    6.29977733e-02]]
 ```
 
 We can conclude that the first, third, and the fourth images have greater certainty then the second and last ones.
