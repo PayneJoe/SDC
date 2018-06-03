@@ -44,6 +44,10 @@ The pipeline of camera calibration is shown as below:
 - collect the corners if found
 - compute the distortion calibration matrix and distortion coefficients with function `cv2.calibrateCamera` and positions of corners and object points, and undistort this image with funcion `cv2.undistort` and calibration matrix and distortion coefficients
 
+Note: 
+
+This script is a example of calibration on image `calibration1` since it is the most notable distortured image while the other images in `camera_cal` directory seem need to be perspective transformed. The script `Pipeline (test images)` *had already* tried to fix all of these images with function `undistortion`, but it seems not working well on all of these image in `camera_cal` folder, *remember checking that script*. I might need more specific suggestions about that.
+
 ### Pipeline (single images)
 
 #### 1. Provide an example of a distortion-corrected image.
@@ -51,6 +55,10 @@ The pipeline of camera calibration is shown as below:
 I take the calibration1.jpg as a example to demonstrate distortion-corrected image:
 
 ![example of calibrated image](output_images/calibration1.jpg)
+
+Note: 
+
+The script `Pipeline (test images)` *had already* tried to fix all of these images with function `undistortion`, but it seems not working well on all of these image in `camera_cal` folder, *remember checking that script*. I might need more specific suggestions about that.
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
@@ -103,11 +111,17 @@ I did this in the last few lines of function `PolyFitting` within code file `./P
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I implemented this step in lines # through # in function `PolyFitting` within code file `yet_another_file.py`.  
+I implemented this step in lines # through # in function `PolyFitting` within code file `./Pipeline (test images).ipynb`.  
 
-I did not save the output of the clearly identified result image, but you can see a example of it after running the jupyter script `./Pipeline (test images).ipynb`.
+The example image of clearly identified one is shown as below:
 
----
+![test3 perspective transformed image](output_images/polyfitting.png)
+
+Update:
+
+For the problem of position of vehicle, I had mistaken the direction of it, and I have already fixed it. I am also wondering if the car is on the left of the center in the whole `project_video.mp4` video.
+
+----
 
 ### Pipeline (video)
 
@@ -123,4 +137,10 @@ Here's a [marked lane in the project video](output_video/project_video.mp4)
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
+Issues during completing this `project_video.mp4`:
+
 I failed once due to the invalid parameter *offset*(initially with 300) in perspective transformation resulting in the failure of finding the left lane line, and it flashed a few seconds. I captured a few of the flawed frames, specifically within 22s, 23s, 40s in timeline with PhotoShop software and saved them in my test_image directory. And tried to change the magnitude of the offset, it worked and flashing disappeared after I set it 200.
+
+Udate:
+
+I tried on the other two videos, it seems works badly, for the `challenge_video.mp4`, I think I need adding more strategies on thresholding besides gray gradient, R/S channel, to improve the quality of left lane line, and I am working on it.
