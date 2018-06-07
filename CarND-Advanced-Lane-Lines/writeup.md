@@ -59,17 +59,21 @@ I take the calibration1.jpg as a example to demonstrate distortion-corrected ima
 
 ![example of calibrated image](output_images/calibration1.jpg)
 
+
+
 Updated 1(by 06/01/2018): 
 
 My code on this still on `Pipeline (test images).ipynb` file.
 
 The script `Pipeline (test images).ipynb` *had already* tried to fix all of these images with function `undistortion`, but it seems not working well on all of these image in `camera_cal` folder, *remember checking that script*. I might need more specific suggestions about that.
 
+
+
 Updated 2(by 06/07/2018):
 
 My code on this still on `Pipeline (test images).ipynb` file.
 
-It seems like I have not cleared my doubt or have the previous reviewers got it. So, I am detailing my steps of trials in the below:
+It seems like I have not cleared my doubt or not having the previous reviewers got it. So, I am detailing my steps of trials in the below:
 1. Initially I chose the `test_images` as my input folder, unfortunately the `findChessboardCorners` returned false, it seemed *normal* on the driving images, not need to be undistortured.
 2. I chose the `camera_cal` as my input folder, lucklily I got have one image `calibration1.jpg` undistortured, while the others still seemed normal. So I put the succeeded one on the above.
 
