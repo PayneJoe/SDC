@@ -75,9 +75,9 @@ My code on this still on `Pipeline (test images).ipynb` file.
 
 It seems like I have not cleared my doubt or not having the previous reviewers got it. So, I am detailing my steps of trials in the below:
 1. Initially I chose the `test_images` as my input folder, unfortunately the `findChessboardCorners` returned false, it seemed *normal* on the driving images, not need to be undistortured.
-2. I chose the `camera_cal` as my input folder, lucklily I got have one image `calibration1.jpg` undistortured, while the others still seemed normal. So I put the succeeded one on the above.
+2. In the following, I chose the `camera_cal` as my input folder, lucklily I got to have one image `calibration1.jpg` undistortured, while the others still seemed *normal*. So I put the succeeded one on the above.
 
-So, I can not seem what's the *point* of this step(undistorture on these images), am I missing something else? We have learned how to find corners on chess board, but could it be applied on other distortured images? Still confusing...
+So, I can not see what's the *point* of this step(undistorture on test_images), am I missing something else? We have learned how to find corners on chess board, but could it be applied on other distortured images? Still confusing...
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
