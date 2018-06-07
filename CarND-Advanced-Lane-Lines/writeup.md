@@ -44,9 +44,12 @@ The pipeline of camera calibration is shown as below:
 - collect the corners if found
 - compute the distortion calibration matrix and distortion coefficients with function `cv2.calibrateCamera` and positions of corners and object points, and undistort this image with funcion `cv2.undistort` and calibration matrix and distortion coefficients
 
-Note: 
+Updated 1(by 06/01/2018): 
+
+My code on this still on `./Camera Calibration.ipynb` file.
 
 This script is a example of calibration on image `calibration1` since it is the most notable distortured image while the other images in `camera_cal` directory seem need to be perspective transformed. The script `Pipeline (test images)` *had already* tried to fix all of these images with function `undistortion`, but it seems not working well on all of these image in `camera_cal` folder, *remember checking that script*. I might need more specific suggestions about that.
+
 
 ### Pipeline (single images)
 
@@ -56,9 +59,21 @@ I take the calibration1.jpg as a example to demonstrate distortion-corrected ima
 
 ![example of calibrated image](output_images/calibration1.jpg)
 
-Note: 
+Updated 1(by 06/01/2018): 
 
-The script `Pipeline (test images)` *had already* tried to fix all of these images with function `undistortion`, but it seems not working well on all of these image in `camera_cal` folder, *remember checking that script*. I might need more specific suggestions about that.
+My code on this still on `Pipeline (test images).ipynb` file.
+
+The script `Pipeline (test images).ipynb` *had already* tried to fix all of these images with function `undistortion`, but it seems not working well on all of these image in `camera_cal` folder, *remember checking that script*. I might need more specific suggestions about that.
+
+Updated 2(by 06/07/2018):
+
+My code on this still on `Pipeline (test images).ipynb` file.
+
+It seems like I have not cleared my doubt or have the previous reviewers got it. So, I am detailing my steps of trials in the below:
+1. Initially I chose the `test_images` as my input folder, unfortunately the `findChessboardCorners` returned false, it seemed *normal* on the driving images, not need to be undistortured.
+2. I chose the `camera_cal` as my input folder, lucklily I got have one image `calibration1.jpg` undistortured, while the others still seemed normal. So I put the succeeded one on the above.
+
+So, I can not seem what's the *point* of this step(undistorture on these images), am I missing something else? We have learned how to find corners on chess board, but could it be applied on other distortured images? Still confusing...
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
